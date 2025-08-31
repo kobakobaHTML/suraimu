@@ -1,0 +1,44 @@
+@charset "utf-8";
+body{
+    background-color: antiquewhite;
+}
+.pixel_art{
+    position:absolute;
+    left:20%;
+    display:grid;
+    grid-template-columns: repeat(16,40px);
+    grid-template-rows: repeat(16,40px);
+    gap: 0;
+    animation-name:slime-animation;
+    animation-duration:3s;
+    animation-iteration-count:infinite;
+}
+.pixel{
+    background-color:antiquewhite;
+    width:40px;
+    height: 40px;
+}
+.blue{
+    background-color: #1295e3;
+}
+.blue2{
+    background-color: #12b7e3;
+}
+.blue3{
+    background-color: #12cce3;
+}
+.black{
+    background-color: black;
+}
+/*アニメーションここから*/
+@keyframes slime-animation{
+    0%{
+        transform:translateY(0) scale(1.1,0.9);
+    }
+    50%{
+        transform:translateY(-50%);
+    }
+    100%{
+        transform:translateY(0) scale(1.1,0.9);
+    }
+}

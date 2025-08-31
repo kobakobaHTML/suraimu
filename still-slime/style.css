@@ -1,0 +1,27 @@
+@charset "utf-8";
+body{
+    background-color: antiquewhite;
+}
+.pixel_art{
+    display:grid;
+    grid-template-columns: repeat(16,40px);
+    grid-template-rows: repeat(16,40px);
+    gap: 0;
+}
+.pixel{
+    background-color:antiquewhite;
+    width:40px;
+    height: 40px;
+}
+.blue{
+    background-color: #1295e3;
+}
+.blue2{
+    background-color: #12b7e3;
+}
+.blue3{
+    background-color: #12cce3;
+}
+.black{
+    background-color: black;
+}
