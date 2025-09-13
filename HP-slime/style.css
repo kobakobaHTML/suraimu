@@ -1,0 +1,116 @@
+@charset "utf-8";
+body{
+    background-color: antiquewhite;
+}
+progress {
+  appearance:none;
+  -webkit-appearance:none;
+  border:none;
+  background-color: transparent;
+  width: 90%;
+  height: 12px;
+}
+
+/* 背景 */
+progress::-webkit-progress-bar {
+  background-color:#ddd;
+  border-radius:8px;
+  overflow:hidden;
+}
+
+/* 進捗バー */
+progress::-webkit-progress-value {
+  background-color:#3b82f6; /* 普通の青 */
+  border-radius:8px;
+}
+
+.slime-wrapper{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+}
+.pixel_art{
+    display:grid;
+    grid-template-columns: repeat(16,40px);
+    grid-template-rows: repeat(16,40px);
+    gap: 0;
+}
+.animation{
+    animation-name:slime-animation;
+    animation-duration:3s;
+}
+.pixel{
+    width:40px;
+    height: 40px;
+}
+.blue{
+    background-color: #1295e3;
+}
+.blue2{
+    background-color: #12b7e3;
+}
+.blue3{
+    background-color: #12cce3;
+}
+.black{
+    background-color: black;
+}
+
+/*アニメーションここから*/
+@keyframes slime-animation{
+    0%{
+        transform:translateY(0) scale(1.1,0.9);
+    }
+    50%{
+        transform:translateY(-50%);
+    }
+    100%{
+        transform:translateY(0) scale(1.1,0.9);
+    }
+}
+@media (max-width: 768px) {
+  /* スライムサイズ縮小 */
+  .pixel_art {
+    grid-template-columns: repeat(16, 20px);
+    grid-template-rows: repeat(16, 20px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .pixel {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* メッセージの位置とサイズ調整 */
+  .messageBox h2 {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .message {
+    right: 5%;
+    top: 5%;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .pixel_art {
+    grid-template-columns: repeat(16, 16px);
+    grid-template-rows: repeat(16, 16px);
+  }
+
+  .pixel {
+    width: 16px;
+    height: 16px;
+  }
+
+  progress {
+    height: 10px;
+  }
+
+  .messageBox h2 {
+    font-size: 0.8rem;
+  }
+}
